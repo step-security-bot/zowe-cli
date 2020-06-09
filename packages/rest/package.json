@@ -1,0 +1,27 @@
+{
+  "name": "@zowe/rest-sdk",
+  "version": "1.0.0",
+  "description": "Zowe Node.js SDK for z/OSMF REST Client.",
+  "author": "Broadcom",
+  "license": "EPL-2.0",
+  "scripts": {
+    "build": "tsc --pretty"
+  },
+  "keywords": [
+    "zosmf",
+    "mainframe",
+    "CLI",
+    "zos",
+    "z/OSMF",
+    "mvs",
+    "os390",
+    "z/OS",
+    "zowe"
+  ],
+  "files": [
+    "lib"
+  ],
+  "devDependencies": {
+    "typescript": "^3.9.5"
+  }
+}
