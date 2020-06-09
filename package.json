@@ -134,7 +134,7 @@
     "transform": {
       ".(ts)": "ts-jest"
     },
-    "testRegex": "__tests__.*\\.(spec|test)\\.ts$",
+    "testRegex": "__tests__\\api.*\\.(spec|test)\\.ts$",
     "moduleFileExtensions": [
       "ts",
       "js"

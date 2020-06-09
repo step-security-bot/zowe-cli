@@ -5,7 +5,8 @@
   "author": "Broadcom",
   "license": "EPL-2.0",
   "scripts": {
-    "build": "tsc --pretty"
+    "build": "tsc --pretty",
+    "test": "jest __tests__\\\\api\\\\.*(test)\\.ts"
   },
   "keywords": [
     "zosmf",
@@ -24,6 +25,9 @@
     "lib"
   ],
   "devDependencies": {
+    "@types/jest": "^26.0.0",
+    "jest": "^26.0.1",
+    "ts-jest": "^26.1.0",
     "typescript": "^3.9.5"
   }
 }
