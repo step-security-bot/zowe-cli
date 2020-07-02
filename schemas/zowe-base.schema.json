@@ -4,56 +4,38 @@
     "id": "http://jsonschema.net",
     "items": {
         "type": "object",
+        "defaultSnippets": [
+            {
+                "label": "Some label",
+                "description": "Some desc",
+                "body": {
+                    "key": "$1"
+                }
+            }
+        ],
         "patternProperties": {
             "^\\S+": {
-                "title": "blah",
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                    "host": {
-                        "type": "string"
+                "allOf": [
+                    {
+                        "$ref": "./definitions/service.definition.json#definitions/service"
                     },
-                    "port": {
-                        "type": "integer"
-                    },
-                    "rejectUnauthorized": {
-                        "type": "boolean"
-                    },
-                    "services": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "zosmf": {
-                                    "defaultSnippets": [
-                                        {
-                                            "label": "Zosmf",
-                                            "body": [
-                                                {
-                                                    "some-zosmf": {
-                                                        "host": "some.zosmf.host",
-                                                        "port": 443
-                                                    }
-                                                }
-                                            ]
-                                        }
-                                    ],
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "patternProperties": {
-                                            "^\\S+": {
+                    {
+                        "properties": {
+                            "services": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "zosmf": {
+                                            "type": "array",
+                                            "title": "z/OSMF Services",
+                                            "items": {
                                                 "type": "object",
-                                                "additionalProperties": false,
-                                                "properties": {
-                                                    "host": {
-                                                        "type": "string"
-                                                    },
-                                                    "port": {
-                                                        "type": "integer"
-                                                    },
-                                                    "rejectUnauthorized": {
-                                                        "type": "boolean"
+                                                "title": "Services",
+                                                "patternProperties": {
+                                                    "^\\S+": {
+                                                        "additionalProperties": false,
+                                                        "$ref": "./definitions/service.definition.json#definitions/service"
                                                     }
                                                 }
                                             }
@@ -63,7 +45,7 @@
                             }
                         }
                     }
-                }
+                ]
             }
         }
     }

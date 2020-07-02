@@ -4,15 +4,21 @@
         "service": {
             "type": "object",
             "properties": {
-                "name": {
-                    "description": "The name of this service",
-                    "type": "string"
-                },
                 "host": {
-                    "type": "string"
+                    "$id": "#/properties/host",
+                    "type": "string",
+                    "title": "Service Host",
+                    "description": "Host for service instance.",
+                    "examples": [
+                        "some.host.com"
+                    ]
                 },
                 "port": {
-                    "type": "integer"
+                    "$id": "#/properties/port",
+                    "type": "integer",
+                    "title": "Service Port",
+                    "description": "Port for service instance.",
+                    "default": 443
                 }
             }
         }
