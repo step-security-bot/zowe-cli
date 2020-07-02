@@ -22,26 +22,7 @@
                     {
                         "properties": {
                             "services": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "zosmf": {
-                                            "type": "array",
-                                            "title": "z/OSMF Services",
-                                            "items": {
-                                                "type": "object",
-                                                "title": "Services",
-                                                "patternProperties": {
-                                                    "^\\S+": {
-                                                        "additionalProperties": false,
-                                                        "$ref": "./definitions/service.definition.json#definitions/service"
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+                                "$ref": "./definitions/services.definition.json#definitions/services"
                             }
                         }
                     }
