@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "zosmf": {
+            "type": "array",
+            "title": "z/OSMF Services",
+            "items": {
+                "type": "object",
+                "title": "Services",
+                "patternProperties": {
+                    "^\\S+": {
+                        "additionalProperties": false,
+                        "$ref": "./service.definition.json#definitions/service"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,19 +1,18 @@
-[{
-    "default": {
-        "host": "some.host.com",
-        "port": 1,
-        "reject": false,
-        "services": [{
-            "zosmf": [{
-                "name": {
-                    "host": "some.host.com",
-                    "port": 443,
-                    "reject": 4
-                },
-                "ca11": {
-                    "host": "some.host.com"
+[
+    {
+        "default": {
+            "host": "some.host.com",
+            "port": 1,
+            "reject": false,
+            "services": [
+                {
+                    "zosmf": {
+                        "name": { 
+                            "host": "asd"
+                        }
+                    }
                 }
-            }]
-        }]
+            ]
+        }
     }
-}]
+]
