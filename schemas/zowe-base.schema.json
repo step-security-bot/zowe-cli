@@ -1,20 +1,15 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$schema": "http://json-schema.org/draft-07/schema",
     "type": "array",
+    "title": "Base profiles",
+    "description": "List of base profiles and their services",
     "id": "http://jsonschema.net",
     "items": {
         "type": "object",
-        "defaultSnippets": [
-            {
-                "label": "Some label",
-                "description": "Some desc",
-                "body": {
-                    "key": "$1"
-                }
-            }
-        ],
         "patternProperties": {
             "^\\S+": {
+                "title": "Base profile",
+                "description": "Base profile and its configuration",
                 "allOf": [
                     {
                         "$ref": "./definitions/service.definition.json#definitions/service"

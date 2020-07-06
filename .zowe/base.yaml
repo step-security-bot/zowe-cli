@@ -2,12 +2,12 @@
 # answer how to allow env vars
 # config.js for pro users
 - default:
-    host: "some.host.com"
-    port: 443
     services:
         - zosmf:
-            - ca11:
+            - tso1:
                 host: some.host.com
-                port: 333
-                rejectUnauthorized: true
-        
+                port: 443
+            - ca11:
+                port: 443
+                rejectUnauthorized: false
+                host: usilca11.lvn.broadcom.net

@@ -1,18 +1,6 @@
-[
-    {
-        "default": {
-            "host": "some.host.com",
-            "port": 1,
-            "reject": false,
-            "services": [
-                {
-                    "zosmf": {
-                        "name": { 
-                            "host": "asd"
-                        }
-                    }
-                }
-            ]
-        }
+[{
+    "default": {
+        "host": "some.host.com",
+        "services": []
     }
-]
+}]

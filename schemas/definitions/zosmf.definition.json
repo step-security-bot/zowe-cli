@@ -4,11 +4,23 @@
         "zosmf": {
             "type": "array",
             "title": "z/OSMF Services",
+            "description": "List of z/OSMF services and their configurations",
             "items": {
                 "type": "object",
                 "title": "Services",
+                "defaultSnippets": [
+                    {
+                        "label": "z/OSMF",
+                        "body": [{
+                            "host": "$1",
+                            "port": false
+                        }]
+                    }
+                ],
                 "patternProperties": {
                     "^\\S+": {
+                        "title": "z/OSMF Service",
+                        "description": "z/OSMF service and its configuration",
                         "additionalProperties": false,
                         "$ref": "./service.definition.json#definitions/service"
                     }

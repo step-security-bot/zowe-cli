@@ -1,5 +1,5 @@
-{
-    "host": {
-        "one": ""
+[{
+    "ca11": {
+        "host": "some.host.com"
     }
-}
+}]
