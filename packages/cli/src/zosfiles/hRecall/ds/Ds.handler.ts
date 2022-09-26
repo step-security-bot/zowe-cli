@@ -10,7 +10,7 @@
 */
 
 import { AbstractSession, IHandlerParameters } from "@zowe/imperative";
-import { IZosFilesResponse, HRecall } from "@zowe/zos-files-for-zowe-sdk";
+import { IZosFilesResponse, HRecall, IRecallOptions } from "@zowe/zos-files-for-zowe-sdk";
 import { ZosFilesBaseHandler } from "../../ZosFilesBase.handler";
 /**
  * Handler to rename a Data Set
@@ -21,7 +21,9 @@ export default class DSHandler extends ZosFilesBaseHandler {
         session: AbstractSession
     ): Promise<IZosFilesResponse> {
 
-        const { options } = commandParameters.arguments;
+        const options: IRecallOptions = {
+            wait: commandParameters.arguments.wait
+        };
 
         return HRecall.dataSet(session, commandParameters.arguments.dataSetName, options);
     }

@@ -10,7 +10,7 @@
 */
 
 import { AbstractSession, IHandlerParameters } from "@zowe/imperative";
-import { IZosFilesResponse, HMigrate } from "@zowe/zos-files-for-zowe-sdk";
+import { IZosFilesResponse, HMigrate, IMigrateOptions } from "@zowe/zos-files-for-zowe-sdk";
 import { ZosFilesBaseHandler } from "../../ZosFilesBase.handler";
 
 /**
@@ -22,7 +22,9 @@ export default class DSHandler extends ZosFilesBaseHandler {
         session: AbstractSession
     ): Promise<IZosFilesResponse> {
 
-        const { options } = commandParameters.arguments;
+        const options: IMigrateOptions = {
+            wait: commandParameters.arguments.wait
+        };
 
         return HMigrate.dataSet(session, commandParameters.arguments.dataSetName, options);
     }
