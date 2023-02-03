@@ -22,7 +22,8 @@ import {
     IHandlerProgressApi,
     IImperativeError,
     ImperativeError,
-    ConnectionPropsForSessCfg
+    ConnectionPropsForSessCfg,
+    ImperativeConfig
 } from "@zowe/imperative";
 import { SshSession } from "./SshSession";
 import { ISshSession } from "./doc/ISshSession";
@@ -63,7 +64,7 @@ export abstract class SshBaseHandler implements ICommandHandler {
      */
     public async process(commandParameters: IHandlerParameters) {
         this.mHandlerParams = commandParameters;
-        this.mSshProfile = commandParameters.profiles.get("ssh", false);
+        this.mSshProfile = ImperativeConfig.instance.config.api.profiles.get("ssh", false);
 
         const sshSessCfgOverride: IOverridePromptConnProps[] = [{
             propertyName: "privateKey",

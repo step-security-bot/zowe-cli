@@ -103,8 +103,8 @@ export class SshSession {
      * Option used in profile creation and commands for private key path
      */
     public static SSH_OPTION_PRIVATEKEY: ICommandOptionDefinition = {
-        name: "privateKey",
-        aliases: ["key", "pk"],
+        name: "private-key",
+        aliases: ["pk", "key"],
         description: "Path to a file containing your private key, that must match a public key stored in the server for authentication",
         type: "string",
         group: SshSession.SSH_CONNECTION_OPTION_GROUP
