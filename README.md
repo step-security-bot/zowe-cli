@@ -9,15 +9,16 @@ This repository also contains the Zowe Node Client SDK. The SDK lets you leverag
 <br/>
 
 ## **Contents**  <!-- omit in toc -->
- - [Documentation](#documentation)
- - [Contribution Guidelines](#contribution-guidelines)
- - [Building Zowe CLI From Source](#build-zowe-cli-from-source)
- - [Installing Zowe CLI From Source](#install-zowe-cli-from-source)
- - [Uninstalling Zowe CLI](#uninstall-zowe-cli)
- - [Configuring Zowe CLI](#configure-zowe-cli)
- - [Zowe Node Client SDK](#zowe-node-client-sdk)
- - [Running System Tests](#run-system-tests)
- - [FAQs](#frequently-asked-questions)
+- [**Documentation**](#documentation)
+- [**Contribution Guidelines**](#contribution-guidelines)
+- [**Building Zowe CLI From Source**](#building-zowe-cli-from-source)
+- [**Installing Zowe CLI From Source**](#installing-zowe-cli-from-source)
+- [**Uninstalling Zowe CLI**](#uninstalling-zowe-cli)
+- [**Configuring Zowe CLI**](#configuring-zowe-cli)
+- [**Zowe Node Client SDK**](#zowe-node-client-sdk)
+  - [Example API Usage](#example-api-usage)
+- [**Running System Tests**](#running-system-tests)
+- [**Frequently Asked Questions**](#frequently-asked-questions)
 
 <br/>
 
@@ -198,6 +199,18 @@ npm run test:system
     Connection details can be managed efficiently within one file, promoting a global configuration that can be shared across teams and mainframe services. For more information on how to use profiles, visit [Zowe Docs](https://docs.zowe.org/stable/user-guide/cli-using-using-team-profiles/).
     
     Secure credential encryption is included in the core CLI.
+
+**Where can I learn more about Zowe?**
+
+  - See [Zowe.org](https://www.zowe.org/) for the latest announcements, detailed documentation, event/meeting calendar, and security policy.
+
+**What is the project's governance model?**
+
+  - Roles for Zowe sub-projects are defined by the Zowe Advisory Council (ZAC): [Roles](https://github.com/zowe/zac/blob/master/process/roles.md)
+  - The Zowe CLI Squad meets twice per week to discuss work-in-progress, prioritization of new issues, or any other relevant topics. These meetings are open to the public. The schedule is available at [https://lists.openmainframeproject.org/g/zowe-dev/calendar](https://lists.openmainframeproject.org/g/zowe-dev/calendar).
+
+**What is the project's code of conduct?**
+  - See [The Linux Foundation®: Code of Conduct](https://events.linuxfoundation.org/about/code-of-conduct/)
 
 <br/>
 

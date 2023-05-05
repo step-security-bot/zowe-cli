@@ -1,10 +1,12 @@
 # Contribution Guidelines
 This document is a living summary of conventions and best practices for development within Zowe CLI or development of Zowe CLI plug-ins.
 
+- [Contribution Guidelines](#contribution-guidelines)
+  - [Developer Certificate of Origin](#developer-certificate-of-origin)
   - [SIGN ALL OF YOUR GIT COMMITS](#sign-all-of-your-git-commits)
   - [Understanding Packages and Plug-ins](#understanding-packages-and-plug-ins)
-  - [Pull Requests](#pull-requests)
   - [Contributing to Core Functionality](#contributing-to-core-functionality)
+  - [Pull Requests](#pull-requests)
   - [General Guidelines](#general-guidelines)
   - [Changelog Update Guidelines](#changelog-update-guidelines)
   - [Code Guidelines](#code-guidelines)
@@ -16,7 +18,12 @@ This document is a living summary of conventions and best practices for developm
   - [Profile Guidelines](#profile-guidelines)
   - [Build Process Guidelines](#build-process-guidelines)
   - [Documentation Guidelines](#documentation-guidelines)
+    - [JS Documentation](#js-documentation)
   - [More Information](#more-information)
+
+## Developer Certificate of Origin
+
+By contributing to this repository, contributors agree to the [Developer Certificate of Origin 1.1](https://developercertificate.org/). **CLEAR WITH PM BEFORE PUBLISHING - This is already part of the ZAC CONTRIBUTING.md, so I assume it is fine.**
 
 ## SIGN ALL OF YOUR GIT COMMITS
 
@@ -128,7 +135,7 @@ The following is an example of the markdown that you should insert into the chan
 
 ## Code Guidelines
 
-Indent code with 4 spaces. This is also documented via `.editorconfig`, which can be used to automatically format the code if you use an [EditorConfig](https://editorconfig.org/) extension for your editor of choice.
+Indent code with 4 spaces. This is also documented via `.editorconfig`, which can be used to automatically format the code if you use an [EditorConfig](https://editorconfig.org/) extension for your editor of choice. Additional style guidelines are available at [Coding style guidelines for Zowe sub-projects](https://github.com/zowe/zac/blob/master/process/CODING_STYLE.md).
 
 Lint rules are enforced through our [build process](#build-process-guidelines).
 
