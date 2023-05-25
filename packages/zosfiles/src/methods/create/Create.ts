@@ -196,14 +196,34 @@ export class Create {
 
                     case "blksize":
                     // zOSMF defaults to TRK if missing so mimic it's behavior
-                        if (isNullOrUndefined(tempOptions.blksize)) {
-                            tempOptions.blksize = tempOptions.lrecl;
+                        if (tempOptions.blksize == null) {
+                            if (tempOptions.recfm.startsWith("V")) {
+                                // eslint-disable-next-line @typescript-eslint/no-magic-numbers
+                                tempOptions.blkSize = tempOptions.lrecl + 4;
+                            } else {
+                                tempOptions.blksize = tempOptions.lrecl;
+                            }
+                        }
+                        if (tempOptions.lrecl != null) {
+                            if (tempOptions.recfm.startsWith("V")) {
+                                // eslint-disable-next-line @typescript-eslint/no-magic-numbers
+                                ImperativeExpect.toBeEqual(tempOptions.blkSize >= tempOptions.lrecl + 4, true,
+                                    "Specified blksize must be lrecl + 4 or greater for datasets with recfm type V");
+                            }
+                            else if (tempOptions.lrecl != 0) {
+                                ImperativeExpect.toBeEqual(tempOptions.blkSize % tempOptions.lrecl, 0,
+                                    "Specified blksize must be a multiple of lrecl");
+                            }
                         }
                         break;
 
                     case "lrecl":
                     // Required
                         ImperativeExpect.toNotBeNullOrUndefined(tempOptions.lrecl, ZosFilesMessages.missingRecordLength.message);
+
+                        if (tempOptions.recfm.toUpperCase() === "FB" || tempOptions.recfm.toUpperCase() === "FBS" ) {
+                            ImperativeExpect.toNotBeEqual(tempOptions.lrecl, 0, "Datasets with FB or FBS recfm cannot have an lrecl of 0.");
+                        }
 
                         break;
 
