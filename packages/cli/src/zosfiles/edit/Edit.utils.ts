@@ -29,6 +29,7 @@ export enum Prompt {
     useStash,
     continueToUpload,
     viewUpdatedRemote,
+    viewDiff,
     overwriteRemote
 }
 
@@ -136,6 +137,17 @@ export class EditUtilities {
                 do {
                     input = await CliUtils.readPrompt(TextUtils.chalk.green(`CONFLICT: Remote has changed. `+
                     `View updated mainframe file? y/n`));
+                }
+                while (input === '');
+                if (input === null) {
+                    throw new ImperativeError({
+                        msg: TextUtils.chalk.red(`No input provided. Command terminated. Temp file will persist.`)
+                    });
+                }
+                return input.toLowerCase() === 'y';
+            case Prompt.viewDiff:
+                do {
+                    input = await CliUtils.readPrompt(TextUtils.chalk.green(`View diff between temp and mainframe file? y/n`));
                 }
                 while (input === '');
                 if (input === null) {
@@ -331,7 +343,7 @@ export class EditUtilities {
             //ask if they want to see changes on the remote file before continuing
             const viewUpdatedRemote: boolean = await this.promptUser(Prompt.viewUpdatedRemote);
             if (viewUpdatedRemote){
-                await this.fileComparison(session, commandParameters);
+                await this.fileComparison(session, commandParameters, true);
             }
             //ask if they want to keep working with their stash (local file) or upload despite changes to remote
             const continueToUpload: boolean = await this.promptUser(Prompt.continueToUpload);
