@@ -95,9 +95,9 @@ The following list describes general conventions for contributing to Zowe CLI:
 - Zowe CLI and plug-ins should be `scoped` under `@zowe`.
 - Throw ImperativeError (or perhaps a wrapping of these) instead of throwing Error objects for automatic logging and node-report captures.
 - Provide adequate logging to diagnose problems that happen at external customer sites.
-- Avoid using/referencing to `zowe` or `Zowe CLI` within help, source file names, and errors - this name is subject to change. For example use `cli` instead.
-- Keep "packages" small and independent without cross dependencies (e.g. `zosjobs` logically should not depend on `zosfiles` package)
-  - When a package is dependent on another package, import the through the dependent package's interface (`index.ts`)
+- Avoid using/referring to `zowe` or `Zowe CLI` within help, source file names, and errors - this name is subject to change. For example use `cli` instead.
+- Keep "packages" small and independent without cross dependencies (e.g. `zosjobs` logically should not depend on `zosfiles` package).
+  - When a package is dependent on another package, import the through the dependent package's interface (`index.ts`).
   e.g. `packages/zosjobs/src/GetJobs.ts` will import the `rest` package via:
     ```typescript
        import { ZosmfRestClient } from "../../../rest";
@@ -106,10 +106,10 @@ The following list describes general conventions for contributing to Zowe CLI:
     ```typescript
     import { ZosmfRestClient } from   "../../../rest/src/ZosmfRestClient";
      ```
-- Make classes small, logical pieces (e.g. instead of 1 `Jobs` class to hold all Job's APIs, we have `GetJobs`, `SubmitJobs`, `DeleteJobs`, etc...)
+- Make classes small, logical pieces (e.g. instead of 1 `Jobs` class to hold all Job's APIs, we have `GetJobs`, `SubmitJobs`, `DeleteJobs`, etc...).
 - Within a package's `src` folder we:
   - Create an `api` folder that will export for programmatic use by other Node apps and by [commands](/docs/CommandFormatStandards.md).
-  - Create a `cli` folder that will contain command definitions
+  - Create a `cli` folder that will contain command definitions.
 
 ## Changelog Update Guidelines
 
@@ -144,7 +144,7 @@ Lint rules are enforced through our [build process](#build-process-guidelines).
 The following list describes conventions for contributing to Zowe CLI APIs:
 
 - When developing programmatic asynchronous APIs, return promises instead of using call-backs.
-- Use ImperativeExpect to perform minimum parameter validation for API methods (e.g. verify parms exist `ImperativeExpect.toBeDefinedAndNonBlank(prefix, "prefix", "prefix is required");)
+- Use ImperativeExpect to perform minimum parameter validation for API methods (e.g. verify parms exist `ImperativeExpect.toBeDefinedAndNonBlank(prefix, "prefix", "prefix is required");`).
 - Include trace messages.
 - Support backward compatibility throughout releases.
 - Provide a `Common` version API call that accepts:
@@ -178,7 +178,7 @@ For information about adhering to our versioning scheme, see [Versioning Guideli
 
 ## Testing Guidelines
 
-For information about testing rules and procedures, see [Testing Guidelines](./docs/TESTING.md) and [Plug-in Testing Guidelines](./docs/PluginTESTINGGuidelines.md).
+For pull requests adding major new functionality, automated tests must be added that provide coverage for this new functionality. These tests may be added either within the same pull request or as a subsequent pull request. For information about testing rules and procedures, see [Testing Guidelines](./docs/TESTING.md) and [Plug-in Testing Guidelines](./docs/PluginTESTINGGuidelines.md).
 
 ## Profile Guidelines
 
