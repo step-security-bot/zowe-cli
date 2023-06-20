@@ -15,7 +15,7 @@ import { AbstractSession, IHandlerParameters, ImperativeError, ProcessUtils, Gui
 import { CompareBaseHelper } from "../compare/CompareBaseHelper";
 import { existsSync, unlinkSync } from "fs";
 import { tmpdir } from "os";
-import path = require("path");
+import * as path from "path"
 import LocalfileDatasetHandler from "../compare/lf-ds/LocalfileDataset.handler";
 import LocalfileUssHandler from "../compare/lf-uss/LocalfileUss.handler";
 
