@@ -2,6 +2,32 @@
 
 All notable changes to the Zowe CLI package will be documented in this file.
 
+## Recent Changes
+
+- BugFix: Add check for invalid block size when creating a sequential dataset. [#1439](https://github.com/zowe/zowe-cli/issues/1439)
+
+## `7.16.4`
+
+BugFix: Fixed `secondary` option being specified as `1` on `BLANK` type datasets with the `zowe files create data-set` command [#1595](https://github.com/zowe/zowe-cli/issues/1595)
+
+## `7.16.3`
+
+- BugFix: Updated `imperative` to fix undesired behavior in the `zowe config list` command in certain situations.
+
+## `7.16.2`
+
+- BugFix: Updated `tar` dependency.
+
+## `7.16.1`
+
+- BugFix: Fixed `--range` option ignored on `zowe files view uss-file` command.
+- BugFix: Fixed `--binary` option ignored by commands that upload and download USS directories when ".zosattributes" file is used.
+- BugFix: Fixed `--include-hidden` option ignored by `zowe files upload dir-to-uss` without the `--recursive` option.
+
+## `7.16.0`
+
+- Enhancement: Updated daemon to use `tokio` library instead of unmaintained `named_pipe` library.
+
 ## `7.15.0`
 
 - Enhancement: Added the `zowe files copy dsclp` command to copy a dataset from one LPAR to another.  [#1098](https://github.com/zowe/zowe-cli/issues/1098)
