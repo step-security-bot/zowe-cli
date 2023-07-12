@@ -20,7 +20,7 @@ jobs:
 
     - run: |
         npx npm-cli-login -y
-        npm publish .github/cli-7.16.4-test.tgz --registry https://zowe.jfrog.io/zowe/api/npm/npm-local-release/
+        npm publish .github/cli-7.16.4-test.tgz --registry https://zowe.jfrog.io/zowe/api/npm/npm-local-release/ --tag test
       env:
         NPM_USER: ${{ secrets.ARTIFACTORY_USERNAME }}
         NPM_PASS: ${{ secrets.ARTIFACTORY_PASSWORD }}
