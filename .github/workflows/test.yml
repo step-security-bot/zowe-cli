@@ -22,7 +22,7 @@ jobs:
         cd /tmp
         curl -o cli-old.tgz https://zowe.jfrog.io/artifactory/npm-local-release/%40zowe/cli/-/%40zowe/cli-7.16.4.tgz
         tar -xvzf cli-old.tgz
-        cd package && npm version 7.1.4 && npm install --ignore-scripts --package-lock-only && cd ..
+        cd package && npm version 7.1.4 && npm install --ignore-scripts --package-lock-only && rm -rf prebuilds && cd ..
         tar -cvzf cli-new.tgz package
 
     - run: |
