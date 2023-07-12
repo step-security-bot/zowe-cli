@@ -20,12 +20,14 @@ jobs:
 
     - run: |
         cd /tmp
-        npx npm-cli-login -y
         curl -o cli-old.tgz https://zowe.jfrog.io/artifactory/npm-local-release/%40zowe/cli/-/%40zowe/cli-7.16.4.tgz
-        tar -xzf cli-old.tgz
-        cd package && npm version 7.1.4 && npm install && cd ..
-        tar -czf cli-new.tgz package
-        npm publish cli-new.tgz --registry https://zowe.jfrog.io/zowe/api/npm/npm-local-release/ --tag test
+        tar -xvzf cli-old.tgz
+        cd package && npm version 7.1.4 && npm install --package-lock-only && cd ..
+        tar -cvzf cli-new.tgz package
+
+    - run: |
+        npx npm-cli-login -y
+        npm publish /tmp/cli-new.tgz --registry https://zowe.jfrog.io/zowe/api/npm/npm-local-release/ --tag test
       env:
         NPM_USER: ${{ secrets.ARTIFACTORY_USERNAME }}
         NPM_PASS: ${{ secrets.ARTIFACTORY_PASSWORD }}
